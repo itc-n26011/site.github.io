@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ラボノート｜ITメモ</title>
+  <link rel="icon" href="img/logo.png" type="image/png">
+  <link rel="stylesheet" href="stylesheet.css">
+</head>
+<body>
+  <header class="top">
+    <a class="brand" href="#">
+      <img src="img/logo.png" width="40" height="40" alt="">
+      <span>ラボノート</span>
+    </a>
+    <nav aria-label="セクション">
+      <a href="#containers">コンテナ</a>
+      <a href="#sql">SQL</a>
+      <a href="#network">ネットワーク</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-text">
+        <h1>動かないものを直して、手順を残す</h1>
+        <p>Linux、Docker、データベース、ネットワークについての個人メモです。実際に手を動かして確かめたコマンドだけを書いています。</p>
+      </div>
+      <img class="hero-img" src="img/hero.png" width="1200" height="640"
+           alt="ネットワーク図：ノードが線でつながり、その上をパケットが流れている">
+    </section>
+
+    <section class="topic" id="containers">
+      <img src="img/icon-containers.png" width="96" height="96" alt="">
+      <div>
+        <h2>コンテナ</h2>
+        <p>コマンド一つでまっさらなデータベースが立ち上がり、不要になればすぐに捨てられます。</p>
+        <pre><code>docker run --name pg -e POSTGRES_PASSWORD=secret -p 5432:5432 -d postgres</code></pre>
+      </div>
+    </section>
+
+    <section class="topic" id="sql">
+      <img src="img/icon-database.png" width="96" height="96" alt="">
+      <div>
+        <h2>SQL</h2>
+        <p>変更する前に、まずテーブルの中身を確認します。</p>
+        <pre><code>SELECT id, name FROM users WHERE active ORDER BY id LIMIT 10;</code></pre>
+      </div>
+    </section>
+
+    <section class="topic" id="network">
+      <img src="img/icon-network.png" width="96" height="96" alt="">
+      <div>
+        <h2>ネットワーク</h2>
+        <p>プロトコルを一つに絞ると、パケットが読みやすくなります。</p>
+        <pre><code>sudo tcpdump -i any -n arp</code></pre>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>実践するたびに、メモを更新しています。</p>
+  </footer>
+</body>
+</html>
